@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/packImages",
+      "handler": "PackImage.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/packImages/count",
+      "handler": "PackImage.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/packImages/:_id",
+      "handler": "PackImage.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/packImages",
+      "handler": "PackImage.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/packImages/:_id",
+      "handler": "PackImage.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/packImages/:_id",
+      "handler": "PackImage.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

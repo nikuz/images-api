@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "quotes",
+  "info": {
+    "name": "quotes",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "text": {
+      "default": "",
+      "maxLength": 255,
+      "type": "string"
+    },
+    "author": {
+      "default": "",
+      "maxLength": 60,
+      "type": "string"
+    },
+    "created": {
+      "default": "",
+      "type": "date"
+    },
+    "edited": {
+      "default": "",
+      "type": "date"
+    },
+    "pack": {
+      "model": "pack",
+      "via": "quotes"
+    },
+    "user": {
+      "model": "user",
+      "via": "quotes",
+      "plugin": "users-permissions"
+    },
+    "genre": {
+      "model": "genre"
+    }
+  }
+}

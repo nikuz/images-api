@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "languages",
+  "info": {
+    "name": "languages",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "maxLength": 20,
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "dictionary": {
+      "default": "",
+      "type": "json",
+      "required": true
+    }
+  }
+}

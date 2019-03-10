@@ -1,0 +1,171 @@
+{
+  "connection": "default",
+  "collectionName": "templates",
+  "info": {
+    "name": "templates",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "image": {
+      "default": "",
+      "maxLength": 256,
+      "type": "string"
+    },
+    "textFontFamily": {
+      "default": "Courgette",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Courgette",
+        "Exo",
+        "GreatVibes",
+        "Guerilla",
+        "Kaushan",
+        "Lato",
+        "Lobster",
+        "MyUnderwood",
+        "NickAinley",
+        "Sensei",
+        "Sports",
+        "Tahoma",
+        "Typograph",
+        "YellowTail"
+      ]
+    },
+    "textEffect": {
+      "default": "type",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "type",
+        "fade-lines",
+        "fade-letters",
+        "slide-lines",
+        "append-lines",
+        "fade"
+      ]
+    },
+    "textAlign": {
+      "default": "left",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "textVerticalAlign": {
+      "default": "center",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ]
+    },
+    "authorFontFamily": {
+      "default": "YellowTail",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Courgette",
+        "Exo",
+        "GreatVibes",
+        "Guerilla",
+        "Kaushan",
+        "Lato",
+        "Lobster",
+        "MyUnderwood",
+        "NickAinley",
+        "Sensei",
+        "Sports",
+        "Tahoma",
+        "Typograph",
+        "YellowTail"
+      ]
+    },
+    "authorEffect": {
+      "default": "fade",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "type",
+        "slide",
+        "append",
+        "fade"
+      ]
+    },
+    "authorAlign": {
+      "default": "center",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "authorVerticalAlign": {
+      "enum": [
+        "stick",
+        "bottom"
+      ],
+      "default": "stick",
+      "type": "enumeration",
+      "required": true
+    },
+    "format": {
+      "default": "jpeg",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "jpeg",
+        "gif",
+        "mp4"
+      ]
+    },
+    "overlay": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "solid",
+        "lines",
+        "border"
+      ]
+    },
+    "filter": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "sepia",
+        "spread",
+        "swirl",
+        "paint",
+        "raise",
+        "blur",
+        "grayscale",
+        "pixelate",
+        "shade"
+      ]
+    },
+    "separator": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "line",
+        "dash",
+        "dot"
+      ]
+    },
+    "system": {
+      "default": false,
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "connection": "default",
+  "collectionName": "pack",
+  "info": {
+    "name": "pack",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string",
+      "required": true
+    },
+    "images-count": {
+      "default": "",
+      "type": "integer"
+    },
+    "description": {
+      "default": "",
+      "maxLength": 500,
+      "type": "text"
+    },
+    "created": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "modified": {
+      "default": "",
+      "type": "date"
+    },
+    "width": {
+      "default": 1080,
+      "type": "integer",
+      "required": true
+    },
+    "height": {
+      "default": 1080,
+      "type": "integer",
+      "required": true
+    },
+    "text-font": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string"
+    },
+    "text-effect": {
+      "default": "type",
+      "type": "enumeration",
+      "enum": [
+        "type",
+        "fade-lines",
+        "fade-letters",
+        "slide-lines",
+        "append-lines",
+        "fade"
+      ]
+    },
+    "text-align": {
+      "default": "center",
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "text-vertical-align": {
+      "default": "center",
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ]
+    },
+    "author-font": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string"
+    },
+    "author-effect": {
+      "enum": [
+        "type",
+        "slide",
+        "append",
+        "fade"
+      ],
+      "default": "fade",
+      "type": "enumeration"
+    },
+    "author-align": {
+      "default": "center",
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "author-vertical-align": {
+      "default": "center",
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ]
+    },
+    "overlay": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "solid",
+        "lines",
+        "border"
+      ]
+    },
+    "quality": {
+      "default": 93,
+      "type": "integer"
+    },
+    "animate": {
+      "default": false,
+      "type": "boolean"
+    },
+    "price": {
+      "default": 10,
+      "type": "integer"
+    },
+    "rendered": {
+      "default": "",
+      "type": "date"
+    },
+    "downloaded": {
+      "default": false,
+      "type": "boolean"
+    },
+    "quotes": {
+      "collection": "quotes",
+      "via": "pack"
+    },
+    "user": {
+      "model": "user",
+      "via": "packs",
+      "plugin": "users-permissions"
+    }
+  }
+}

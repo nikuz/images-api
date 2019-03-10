@@ -1,0 +1,14 @@
+{
+  "connection": "default",
+  "collectionName": "image",
+  "info": {
+    "name": "packImage",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    
+  }
+}

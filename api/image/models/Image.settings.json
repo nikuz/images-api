@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "image",
+  "info": {
+    "name": "image",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "url": {
+      "default": "",
+      "maxLength": 256,
+      "type": "string",
+      "required": true
+    },
+    "genre": {
+      "model": "genre"
+    }
+  }
+}
