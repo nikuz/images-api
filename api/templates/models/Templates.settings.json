@@ -12,7 +12,8 @@
     "image": {
       "default": "",
       "maxLength": 256,
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "textFontFamily": {
       "default": "Courgette",
@@ -133,6 +134,7 @@
       "default": "",
       "type": "enumeration",
       "enum": [
+        "none",
         "solid",
         "lines",
         "border"
@@ -142,6 +144,7 @@
       "default": "",
       "type": "enumeration",
       "enum": [
+        "none",
         "sepia",
         "spread",
         "swirl",
@@ -157,6 +160,7 @@
       "default": "",
       "type": "enumeration",
       "enum": [
+        "none",
         "line",
         "dash",
         "dot"
@@ -165,6 +169,49 @@
     "system": {
       "default": false,
       "type": "boolean",
+      "required": true
+    },
+    "color": {
+      "default": "#FFFFFF",
+      "maxLength": 7,
+      "type": "string"
+    },
+    "genre": {
+      "model": "genre"
+    },
+    "fileId": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string"
+    },
+    "text": {
+      "default": "",
+      "maxLength": 500,
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "default": "",
+      "maxLength": 60,
+      "type": "string",
+      "required": true
+    },
+    "originalFileId": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string",
+      "required": true
+    },
+    "originalImage": {
+      "default": "",
+      "maxLength": 256,
+      "type": "string",
+      "required": true
+    },
+    "crop": {
+      "default": "",
+      "max": 2000,
+      "type": "integer",
       "required": true
     }
   }

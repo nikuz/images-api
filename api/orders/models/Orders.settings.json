@@ -1,0 +1,89 @@
+{
+  "connection": "default",
+  "collectionName": "orders",
+  "info": {
+    "name": "orders",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "user": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "templates": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "genre": {
+      "model": "genre"
+    },
+    "format": {
+      "default": "jpeg",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "jpeg",
+        "gif",
+        "mp4"
+      ]
+    },
+    "crop": {
+      "default": 2000,
+      "type": "integer",
+      "required": true
+    },
+    "logo": {
+      "default": "",
+      "maxLength": 256,
+      "type": "string"
+    },
+    "logoFileId": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string"
+    },
+    "logoAlign": {
+      "default": "left",
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "copyright": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string"
+    },
+    "copyrightAlign": {
+      "default": "right",
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "packsize": {
+      "model": "packsizes"
+    },
+    "status": {
+      "default": "created",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "created",
+        "paid",
+        "on rendering",
+        "rendered",
+        "sended",
+        "downloaded"
+      ]
+    }
+  }
+}

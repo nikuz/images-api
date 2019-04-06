@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "packsizes",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "size": {
+      "default": "",
+      "max": 1000,
+      "type": "integer"
+    },
+    "price": {
+      "default": "",
+      "max": 1000,
+      "type": "integer"
+    },
+    "discount": {
+      "default": "",
+      "max": 100,
+      "type": "integer"
+    }
+  }
+}

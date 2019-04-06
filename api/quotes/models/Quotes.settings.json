@@ -11,7 +11,7 @@
   "attributes": {
     "text": {
       "default": "",
-      "maxLength": 255,
+      "maxLength": 500,
       "type": "string"
     },
     "author": {
@@ -31,13 +31,14 @@
       "model": "pack",
       "via": "quotes"
     },
-    "user": {
-      "model": "user",
-      "via": "quotes",
-      "plugin": "users-permissions"
-    },
     "genre": {
       "model": "genre"
+    },
+    "user": {
+      "default": "",
+      "maxLength": 100,
+      "type": "string",
+      "required": true
     }
   }
 }

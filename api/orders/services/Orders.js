@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * PackImage.js service
+ * Orders.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -12,21 +12,21 @@ const _ = require('lodash');
 module.exports = {
 
   /**
-   * Promise to fetch all packimages.
+   * Promise to fetch all orders.
    *
    * @return {Promise}
    */
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('packimage', params);
+    const filters = strapi.utils.models.convertParams('orders', params);
     // Select field to populate.
-    const populate = PackImage.associations
+    const populate = Orders.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return PackImage
+    return Orders
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,90 +36,90 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an packImage.
+   * Promise to fetch a/an orders.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = PackImage.associations
+    const populate = Orders.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return PackImage
-      .findOne(_.pick(params, _.keys(PackImage.schema.paths)))
+    return Orders
+      .findOne(_.pick(params, _.keys(Orders.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count packimages.
+   * Promise to count orders.
    *
    * @return {Promise}
    */
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('packimage', params);
+    const filters = strapi.utils.models.convertParams('orders', params);
 
-    return PackImage
+    return Orders
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an packImage.
+   * Promise to add a/an orders.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, PackImage.associations.map(ast => ast.alias));
-    const data = _.omit(values, PackImage.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Orders.associations.map(ast => ast.alias));
+    const data = _.omit(values, Orders.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await PackImage.create(data);
+    const entry = await Orders.create(data);
 
     // Create relational data and return the entry.
-    return PackImage.updateRelations({ _id: entry.id, values: relations });
+    return Orders.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an packImage.
+   * Promise to edit a/an orders.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, PackImage.associations.map(a => a.alias));
-    const data = _.omit(values, PackImage.associations.map(a => a.alias));
+    const relations = _.pick(values, Orders.associations.map(a => a.alias));
+    const data = _.omit(values, Orders.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await PackImage.update(params, data, { multi: true });
+    const entry = await Orders.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return PackImage.updateRelations(Object.assign(params, { values: relations }));
+    return Orders.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an packImage.
+   * Promise to remove a/an orders.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = PackImage.associations
+    const populate = Orders.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await PackImage
+    const data = await Orders
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      PackImage.associations.map(async association => {
+      Orders.associations.map(async association => {
         if (!association.via || !data._id) {
           return true;
         }
@@ -149,22 +149,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an packImage.
+   * Promise to search a/an orders.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('packimage', params);
+    const filters = strapi.utils.models.convertParams('orders', params);
     // Select field to populate.
-    const populate = PackImage.associations
+    const populate = Orders.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(PackImage.attributes).reduce((acc, curr) => {
-      switch (PackImage.attributes[curr].type) {
+    const $or = Object.keys(Orders.attributes).reduce((acc, curr) => {
+      switch (Orders.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -188,7 +188,7 @@ module.exports = {
       }
     }, []);
 
-    return PackImage
+    return Orders
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

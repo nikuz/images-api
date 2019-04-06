@@ -17,6 +17,18 @@
     },
     "genre": {
       "model": "genre"
+    },
+    "fileId": {
+      "default": "",
+      "type": "string"
+    },
+    "size": {
+      "default": "",
+      "type": "decimal"
+    },
+    "crop": {
+      "default": "",
+      "type": "integer"
     }
   }
 }

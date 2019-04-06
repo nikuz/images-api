@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `PackImage` model.
+ * Lifecycle callbacks for the `Packsizes` model.
  */
 
 module.exports = {
