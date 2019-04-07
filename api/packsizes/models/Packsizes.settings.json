@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "packsizes",
   "info": {
     "name": "packsizes",
     "description": ""
@@ -23,6 +23,15 @@
       "default": "",
       "max": 100,
       "type": "integer"
+    },
+    "format": {
+      "default": "jpeg",
+      "type": "enumeration",
+      "enum": [
+        "jpeg",
+        "gif",
+        "mp4"
+      ]
     }
   }
 }

@@ -53,15 +53,41 @@ module.exports = {
    */
 
   create: async (ctx) => {
+    const { logo } = ctx.request.body.files;
+    const maxLogoSize = 1024 * 1000; // limit logo size to 100kb
+    if (logo && logo.size > maxLogoSize) {
+      return ctx.response.serverUnavailable(`max logo size is ${maxLogoSize / 1024}`);
+    }
+
     const user = ctx.state.user;
     if (!user) {
       return ctx.response.serverUnavailable('not authorized');
     }
-    return strapi.services.orders.add({
+
+    const response = {
       ...ctx.request.body.fields,
       user: user._id,
       status: 'created',
-    });
+    };
+
+    if (logo && logo.path) {
+      const uploadConfig = await strapi.store({
+        environment: strapi.config.environment,
+        type: 'plugin',
+        name: 'upload'
+      }).get({ key: 'provider' });
+
+      const buffers = await strapi.plugins.upload.services.upload.bufferize(logo);
+      const uploadedLogo = await strapi.plugins.upload.services.upload.upload(buffers, uploadConfig);
+      if (!uploadedLogo || !uploadedLogo[0]) {
+        return ctx.response.serverUnavailable('can\'t upload logo');
+      }
+
+      response.logo = uploadedLogo[0].url;
+      response.logoFileId = uploadedLogo[0].id;
+    }
+
+    return strapi.services.orders.add(response);
   },
 
   /**
